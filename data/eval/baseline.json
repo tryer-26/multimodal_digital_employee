@@ -1,0 +1,35 @@
+{
+  "run_id": "eval-20261004-004818-5195",
+  "saved_at": "2026-10-04T11:35:17",
+  "results": {
+    "asr": {
+      "cer": 0.0276,
+      "sentence_accuracy": 0.8,
+      "failure_rate": 0.0,
+      "synth_failed": 0,
+      "latency_p50_ms": 3380.1,
+      "latency_p95_ms": 12242.5,
+      "measured": 10
+    },
+    "tts": {
+      "success_rate": 1.0,
+      "round_trip_cer": 0.0387,
+      "latency_p50_ms": 2191.7,
+      "latency_p95_ms": 3265.2,
+      "mean_chars_per_sec": 4.15,
+      "duration_len_corr": 0.6841,
+      "truncation_rate": 0.0,
+      "measured": 10
+    },
+    "vlm": {
+      "error_code_accuracy": 1.0,
+      "service_hit_rate": 1.0,
+      "error_type_accuracy": 1.0,
+      "diagnosis_field_accuracy": 1.0,
+      "caption_cosine": 0.6094,
+      "caption_keypoint_hit": 1.0,
+      "hallucination_free_rate": 0.6667,
+      "judge_available": 3
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# MDE-LAB 前端（Vue 3 + Vite SPA），见设计文档 18.1
+# 构建上下文 = 仓库根目录（与 core 镜像共用，便于在 deploy/ 下统一编排），
+# 因此源码路径均以 frontend/ 为前缀，而非在 frontend/ 目录内构建。
+FROM node:20-alpine
+
+WORKDIR /app
+
+# 先装依赖以复用镜像层缓存（带 lockfile 用 npm ci，保证构建可复现）
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm ci
+
+# 拷贝源码并构建
+COPY frontend/ ./
+RUN npm run build
+
+EXPOSE 3000
+
+# 用 vite preview 提供构建产物，并按 vite.config.js 的 preview.proxy 代理 /api 与 /ws
+CMD ["npm", "run", "preview"]

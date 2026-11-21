@@ -1,0 +1,47 @@
+# MDE-LAB 多模态数字员工平台 —— 部署编排，见设计文档 18.1
+#
+# 与 Qdrant 方案相比不再需要独立的向量库容器：ChromaDB 以嵌入式库形式
+# 随 core 进程运行，数据落在 ../data/chroma。
+#
+# 用法（在仓库根目录执行）：
+#   docker compose -f deploy/docker-compose.yml up -d
+
+services:
+  core:
+    build:
+      # 上下文为仓库根目录：core 镜像需拷贝 core / eval / mcp_servers 等
+      context: ..
+      dockerfile: deploy/Dockerfile.core
+    image: mde-lab-core:1.0.0
+    container_name: mde-lab-core
+    ports:
+      - "8000:8000"
+    volumes:
+      # 知识库文件、ChromaDB、媒体文件、业务库均持久化在此卷内
+      - ../data:/app/data
+    env_file:
+      - ../.env                   # 统一读取配置（见十七章）
+    environment:
+      # 工单库与向量库落在数据卷内，容器重启后数据保留
+      TICKETS_DB_PATH: /app/data/tickets.db
+      DB_PATH: /app/data/app.db
+      CHROMA_PATH: /app/data/chroma
+      MEDIA_DIR: /app/data/media
+    restart: unless-stopped
+    # 注意：ChromaDB 为嵌入式，core 必须单实例运行，不启用多 worker
+
+  frontend:
+    build:
+      # 上下文同为仓库根目录，Dockerfile 内以 frontend/ 前缀拷贝源码
+      context: ..
+      dockerfile: deploy/Dockerfile.frontend
+    image: mde-lab-frontend:1.0.0
+    container_name: mde-lab-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      # 容器内通过服务名访问 core（vite preview 代理 /api 与 /ws）
+      BACKEND_TARGET: http://core:8000
+    depends_on:
+      - core
+    restart: unless-stopped

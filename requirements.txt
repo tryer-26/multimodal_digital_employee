@@ -1,0 +1,42 @@
+# ============ Web 框架 ============
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+websockets>=12.0
+
+# ============ 配置与校验 ============
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+
+# ============ 模型调用（OpenAI 兼容协议）============
+openai>=1.40.0
+httpx>=0.27.0
+
+# ============ Agent 编排 ============
+# 上限必要：crew_agents.py 依赖 provider 内部路径（crewai.llms.providers.openai.*）
+# 与 crewai.flow / crewai.tools，跨大版本易破；下限对齐本机实测版本
+crewai>=1.15,<2
+
+# ============ MCP 协议 ============
+mcp>=1.28,<2
+fastmcp>=3.4,<4
+
+# ============ 多模态 RAG ============
+chromadb>=1.1,<2
+numpy>=1.26.0
+pymupdf>=1.24.0          # PDF 文本/图片抽取与整页渲染
+python-docx>=1.1.0       # docx 解析
+Pillow>=10.3.0           # 图片降采样
+
+# ============ 多模态感知 ============
+# 上限必要：代码依赖 7.x 的 WordBoundary 时间戳（逐词字幕）
+edge-tts>=7.0,<8         # TTS（本地、免费、零部署）
+# 说明：本地 OCR / ASR 引擎（paddleocr + paddlepaddle / funasr）为**可选依赖**，未随本清单安装；
+#       未安装时请将 OCR_PROVIDER / ASR_PROVIDER 设为 api（复用 VLM / 在线语音识别），见 .env.example
+
+# ============ 定时任务 ============
+apscheduler>=3.10.4
+
+# ============ 测试 ============
+pytest>=8.2.0
+pytest-asyncio>=0.23.0

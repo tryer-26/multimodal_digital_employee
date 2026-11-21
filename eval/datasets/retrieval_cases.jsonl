@@ -1,0 +1,10 @@
+{"id": "ret-001", "query": "VPN 连接失败提示错误 619 怎么解决", "gold": ["vpn.md"]}
+{"id": "ret-002", "query": "忘记密码了如何重置企业账号密码", "gold": ["password.md"]}
+{"id": "ret-003", "query": "企业邮箱 IMAP 和 SMTP 服务器端口怎么配置", "gold": ["email.md"]}
+{"id": "ret-004", "query": "安装软件时提示没有管理员权限怎么办", "gold": ["software.md"]}
+{"id": "ret-005", "query": "Nginx 502 Bad Gateway 是什么原因导致的", "gold": ["error_code_table.md"]}
+{"id": "ret-006", "query": "账号连续输错密码被锁定多久能自动解锁", "gold": ["password.md"]}
+{"id": "ret-007", "query": "VPN 报错截图上显示了什么错误码", "gold": ["vpn_error_619.png", "vpn.md"]}
+{"id": "ret-008", "query": "管理员和普通员工的密码有效期分别是多久", "gold": ["password.md"]}
+{"id": "ret-009", "query": "Windows 访问被拒绝错误码 0x80070005 是什么意思", "gold": ["error_code_table.md"]}
+{"id": "ret-010", "query": "企业内网通过什么路径和协议接入 VPN", "gold": ["network_diagram.png", "vpn.md"]}

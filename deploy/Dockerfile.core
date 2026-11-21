@@ -1,0 +1,39 @@
+# MDE-LAB 中台（FastAPI + CrewAI + 多模态 RAG），见设计文档 18.1
+# 构建上下文 = 仓库根目录：docker compose -f deploy/docker-compose.yml build
+# 注意：ChromaDB 为嵌入式（PersistentClient），core 必须单实例运行，不启用多 worker。
+FROM python:3.11-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    TZ=Asia/Shanghai
+
+WORKDIR /app
+
+# 系统依赖：curl 供健康检查；libgl/字体供 Pillow 渲染中文截图
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        curl \
+        libgl1 \
+        libglib2.0-0 \
+        fonts-noto-cjk \
+    && rm -rf /var/lib/apt/lists/*
+
+# 先装依赖以复用镜像层缓存
+COPY requirements.txt ./
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# 拷贝源码（eval 为 core.main 顶层导入，必需；tests 不随运行镜像分发）
+COPY core ./core
+COPY eval ./eval
+COPY mcp_servers ./mcp_servers
+
+# 运行时数据目录（挂载 ./data 卷，保证容器重建后数据保留）
+RUN mkdir -p /app/data/knowledge /app/data/chroma /app/data/media
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+    CMD curl -fsS http://localhost:8000/api/health || exit 1
+
+# 单 worker（ChromaDB 嵌入式独占）
+CMD ["uvicorn", "core.main:app", "--host", "0.0.0.0", "--port", "8000"]

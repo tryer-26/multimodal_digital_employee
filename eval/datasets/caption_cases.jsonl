@@ -1,0 +1,3 @@
+{"id": "cap-001", "image": "network_topology.png", "gold_caption": "企业网络架构与 VPN 接入路径示意图：员工终端经公网/运营商接入 VPN 网关，再到达内网应用服务器，链路上标注了 1723/443 端口与 IKEv2/SSTP 协议。", "key_points": ["员工终端", "VPN网关", "内网应用服务器", "1723", "IKEv2"]}
+{"id": "cap-002", "image": "vpn_619.png", "gold_caption": "VPN 客户端连接失败报错截图，提示错误 619 无法建立到远程计算机的连接，因为网络端口已被关闭，使用 PPTP 协议与 1723 端口，客户端版本 v2.8 过低。", "key_points": ["619", "VPN", "1723", "端口", "版本"]}
+{"id": "cap-003", "image": "nginx_502.png", "gold_caption": "Nginx 502 Bad Gateway 报错页，说明上游服务不可达，需检查后端服务状态与 proxy_read_timeout 配置。", "key_points": ["502", "Nginx", "上游服务", "网关"]}

@@ -1,0 +1,60 @@
+# 环境与密钥
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# 数据（向量库 / 业务库 / 媒体 / 工单库）
+data/chroma/
+data/media/
+data/app.db
+data/*.db
+mcp_servers/it_service/tickets.db
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+
+# 运行日志（start.ps1 落盘的中台日志）
+logs/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# Local runtime files excluded from public source
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+logs/
+chroma_db/
+chroma_db_demo/
+chroma/
+uploads/
+media/
+volumes/
+processed/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.pyc
+*.log
+*.tar
+*.downloading
+*Zone.Identifier

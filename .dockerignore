@@ -1,0 +1,15 @@
+# Docker 构建上下文过滤（deploy/Dockerfile.core、deploy/Dockerfile.frontend 共用）
+# 注：.dockerignore 按 Docker 规定必须位于构建上下文根目录，即仓库根目录。
+.git
+.gitignore
+.env
+.venv
+.pytest_cache
+.ruff_cache
+**/__pycache__
+**/*.pyc
+data
+docs
+frontend/node_modules
+frontend/dist
+**/*.db

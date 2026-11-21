@@ -1,0 +1,485 @@
+{
+  "id": "eval-20261004-004818-5195",
+  "status": "done",
+  "suites": [
+    "asr",
+    "tts",
+    "vlm"
+  ],
+  "started_at": "2026-10-04T00:48:18",
+  "finished_at": "2026-10-04T00:49:34",
+  "progress": {
+    "done": 3,
+    "total": 3,
+    "current": ""
+  },
+  "config": {
+    "asr_provider": "api",
+    "asr_model": "FunAudioLLM/SenseVoiceSmall",
+    "tts_provider": "edge",
+    "tts_voice": "zh-CN-XiaoxiaoNeural",
+    "vlm_model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+    "embedding_model": "Qwen/Qwen3-VL-Embedding-8B",
+    "reranker_model": "Qwen/Qwen3-VL-Reranker-8B",
+    "retrieval_top_k": 10,
+    "reranker_top_n": 3,
+    "max_cases": 20,
+    "concurrency": 2,
+    "thresholds": {
+      "asr_cer": 0.15,
+      "tts_cer": 0.15,
+      "vlm_field_acc": 0.67,
+      "caption_keypoint": 0.6,
+      "retrieval_recall": 0.7
+    }
+  },
+  "results": {
+    "asr": {
+      "suite": "asr",
+      "title": "语音识别（ASR）字错率",
+      "sample_count": 10,
+      "metrics": {
+        "cer": 0.0276,
+        "sentence_accuracy": 0.8,
+        "failure_rate": 0.0,
+        "synth_failed": 0,
+        "latency_p50_ms": 3380.1,
+        "latency_p95_ms": 12242.5,
+        "measured": 10
+      },
+      "items": [
+        {
+          "id": "sp-001",
+          "text": "我的 VPN 连接不上，提示错误 619。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "我的VPN连接不上，提示错误619。",
+          "cer": 0.0,
+          "latency_ms": 3029.1,
+          "error": ""
+        },
+        {
+          "id": "sp-002",
+          "text": "企业邮箱能收邮件但不能发邮件，应该怎么解决？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "企业邮箱能收邮件，但不能发邮件，应该怎么解决？",
+          "cer": 0.0,
+          "latency_ms": 3895.7,
+          "error": ""
+        },
+        {
+          "id": "sp-003",
+          "text": "我忘记密码了，怎么重置企业账号密码？",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "我忘记密码了，怎么重置企业账号密码？",
+          "cer": 0.0,
+          "latency_ms": 2870.0,
+          "error": ""
+        },
+        {
+          "id": "sp-004",
+          "text": "安装数据库客户端时提示没有管理员权限。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "安装数据库客户端时提示没有管理员权限。",
+          "cer": 0.0,
+          "latency_ms": 3260.1,
+          "error": ""
+        },
+        {
+          "id": "sp-005",
+          "text": "Nginx 返回 502 错误，上游服务不可达。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "mix返回502错误，上游服务不可达。",
+          "cer": 0.1579,
+          "latency_ms": 3500.0,
+          "error": ""
+        },
+        {
+          "id": "sp-006",
+          "text": "账号连续输错五次被锁定了，多久能解锁？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "账号连续输错5次被锁定了，多久能解锁？",
+          "cer": 0.0,
+          "latency_ms": 13207.4,
+          "error": ""
+        },
+        {
+          "id": "sp-007",
+          "text": "VPN 客户端需要升级到 3.2 以上版本。",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "VPN客户端需要升级到3.2以上版本。",
+          "cer": 0.0,
+          "latency_ms": 11063.1,
+          "error": ""
+        },
+        {
+          "id": "sp-008",
+          "text": "Outlook 配置企业邮箱的 IMAP 服务器端口是 993。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "outlook配置企业邮箱的imm服务器端口是993。",
+          "cer": 0.0741,
+          "latency_ms": 7549.7,
+          "error": ""
+        },
+        {
+          "id": "sp-009",
+          "text": "申请办公软件安装需要直属主管审批。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "申请办公软件安装需要直属主管审批。",
+          "cer": 0.0,
+          "latency_ms": 2637.8,
+          "error": ""
+        },
+        {
+          "id": "sp-010",
+          "text": "普通员工的密码有效期是一百八十天。",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "普通员工的密码有效期是180天。",
+          "cer": 0.0,
+          "latency_ms": 3070.5,
+          "error": ""
+        }
+      ],
+      "primary_metric": "cer",
+      "criteria": [],
+      "verdict": "PASS",
+      "notes": []
+    },
+    "tts": {
+      "suite": "tts",
+      "title": "语音合成（TTS）可懂度与副语言",
+      "sample_count": 10,
+      "metrics": {
+        "success_rate": 1.0,
+        "round_trip_cer": 0.0387,
+        "latency_p50_ms": 2191.7,
+        "latency_p95_ms": 3265.2,
+        "mean_chars_per_sec": 4.15,
+        "duration_len_corr": 0.6841,
+        "truncation_rate": 0.0,
+        "measured": 10
+      },
+      "items": [
+        {
+          "id": "sp-001",
+          "text": "我的 VPN 连接不上，提示错误 619。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "duration_sec": 4.608,
+          "chars_per_sec": 3.47,
+          "hypothesis": "我的VPN连接不上，提示错误619。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 2398.2,
+          "error": ""
+        },
+        {
+          "id": "sp-002",
+          "text": "企业邮箱能收邮件但不能发邮件，应该怎么解决？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "duration_sec": 4.896,
+          "chars_per_sec": 4.08,
+          "hypothesis": "企业邮箱能收邮件，但不能发邮件，应该怎么解决？",
+          "round_trip_cer": 0.0,
+          "latency_ms": 2084.4,
+          "error": ""
+        },
+        {
+          "id": "sp-003",
+          "text": "我忘记密码了，怎么重置企业账号密码？",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "duration_sec": 4.104,
+          "chars_per_sec": 3.9,
+          "hypothesis": "我忘记密码了，怎么重置企业账号密码？",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1922.8,
+          "error": ""
+        },
+        {
+          "id": "sp-004",
+          "text": "安装数据库客户端时提示没有管理员权限。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "duration_sec": 3.936,
+          "chars_per_sec": 4.57,
+          "hypothesis": "安装数据库客户端时提示没有管理员权限。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 2146.9,
+          "error": ""
+        },
+        {
+          "id": "sp-005",
+          "text": "Nginx 返回 502 错误，上游服务不可达。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "duration_sec": 4.2,
+          "chars_per_sec": 4.52,
+          "hypothesis": "mix返回502错误，上游服务不可达。",
+          "round_trip_cer": 0.1579,
+          "latency_ms": 2236.4,
+          "error": ""
+        },
+        {
+          "id": "sp-006",
+          "text": "账号连续输错五次被锁定了，多久能解锁？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "duration_sec": 4.296,
+          "chars_per_sec": 3.96,
+          "hypothesis": "账号连续输错5次被锁定了，多久能解锁？",
+          "round_trip_cer": 0.0,
+          "latency_ms": 3446.8,
+          "error": ""
+        },
+        {
+          "id": "sp-007",
+          "text": "VPN 客户端需要升级到 3.2 以上版本。",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "duration_sec": 4.512,
+          "chars_per_sec": 3.77,
+          "hypothesis": "VPN客户端需要升级到3.2以上版本。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 3043.3,
+          "error": ""
+        },
+        {
+          "id": "sp-008",
+          "text": "Outlook 配置企业邮箱的 IMAP 服务器端口是 993。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "duration_sec": 5.016,
+          "chars_per_sec": 5.38,
+          "hypothesis": "outload配置企业邮箱的imm服务器端口是993。",
+          "round_trip_cer": 0.1481,
+          "latency_ms": 1986.4,
+          "error": ""
+        },
+        {
+          "id": "sp-009",
+          "text": "申请办公软件安装需要直属主管审批。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "duration_sec": 4.296,
+          "chars_per_sec": 3.72,
+          "hypothesis": "申请办公软件安装需要直属主管审批。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 2731.4,
+          "error": ""
+        },
+        {
+          "id": "sp-010",
+          "text": "普通员工的密码有效期是一百八十天。",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "duration_sec": 3.624,
+          "chars_per_sec": 4.14,
+          "hypothesis": "普通员工的密码有效期是180天。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1560.0,
+          "error": ""
+        }
+      ],
+      "primary_metric": "round_trip_cer",
+      "criteria": [],
+      "verdict": "PASS",
+      "notes": []
+    },
+    "vlm": {
+      "suite": "vlm",
+      "title": "图文理解（截图诊断 + 配图描述）",
+      "sample_count": 6,
+      "metrics": {
+        "error_code_accuracy": 1.0,
+        "service_hit_rate": 1.0,
+        "error_type_accuracy": 1.0,
+        "diagnosis_field_accuracy": 1.0,
+        "caption_cosine": 0.6094,
+        "caption_keypoint_hit": 1.0,
+        "hallucination_free_rate": 0.6667,
+        "judge_available": 3
+      },
+      "items": [
+        {
+          "kind": "diagnosis",
+          "id": "vlm-001",
+          "image": "vpn_619.png",
+          "gold": {
+            "error_code": "619",
+            "service": "VPN",
+            "error_type": "网络"
+          },
+          "pred": {
+            "error_code": "619",
+            "service": "VPN",
+            "error_type": "网络"
+          },
+          "matches": {
+            "error_code": true,
+            "service": true,
+            "error_type": true
+          },
+          "field_hit": 1.0,
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "diagnosis",
+          "id": "vlm-002",
+          "image": "nginx_502.png",
+          "gold": {
+            "error_code": "502",
+            "service": "Nginx",
+            "error_type": "网络"
+          },
+          "pred": {
+            "error_code": "502",
+            "service": "Nginx",
+            "error_type": "网络"
+          },
+          "matches": {
+            "error_code": true,
+            "service": true,
+            "error_type": true
+          },
+          "field_hit": 1.0,
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "diagnosis",
+          "id": "vlm-003",
+          "image": "vpn_691.png",
+          "gold": {
+            "error_code": "691",
+            "service": "VPN",
+            "error_type": "权限"
+          },
+          "pred": {
+            "error_code": "691",
+            "service": "VPN",
+            "error_type": "权限"
+          },
+          "matches": {
+            "error_code": true,
+            "service": true,
+            "error_type": true
+          },
+          "field_hit": 1.0,
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "caption",
+          "id": "cap-001",
+          "image": "network_topology.png",
+          "key_points": [
+            "员工终端",
+            "VPN网关",
+            "内网应用服务器",
+            "1723",
+            "IKEv2"
+          ],
+          "caption": "网络拓扑图，主体为员工终端、公网/运营商、VPN网关和内网应用服务器，标注了1723/443端口和IKEv2/SSTP协议，表达VPN接入路径及网关策略与NAT对连接成功率的影响。",
+          "cosine": 0.5719,
+          "keypoint_hit": 1.0,
+          "judge": {
+            "available": true,
+            "hallucinated": [
+              "443",
+              "SSTP"
+            ],
+            "coverage": 0.6,
+            "reason": "描述中提到443端口和SSTP协议，但图中仅标注1723和IKEv2，存在幻觉；覆盖了员工终端、VPN网关、内网应用服务器和1723、IKEv2中的部分要素。"
+          },
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "caption",
+          "id": "cap-002",
+          "image": "vpn_619.png",
+          "key_points": [
+            "619",
+            "VPN",
+            "1723",
+            "端口",
+            "版本"
+          ],
+          "caption": "报错截图，主体为VPN客户端，显示连接失败错误信息；关键文字包括错误码619、协议PPTP、端口1723、客户端版本v2.8（低于建议的v3.2）；图中表明因网络端口被关闭导致无法建立连接。",
+          "cosine": 0.4906,
+          "keypoint_hit": 1.0,
+          "judge": {
+            "available": true,
+            "hallucinated": [],
+            "coverage": 0.83,
+            "reason": "描述中错误地将错误码写为619，实际图片中为619，但原文描述为错误码619，而实际图片显示的是错误码619，重复确认后，图片中显示的是619，因此存在明显幻觉；但描述中提及的其他内容如VPN、1723、端口、版本均正确，但错误码619是错误的，实际应为619，故存在幻觉。但原描述中错误码619是正确的，因此无幻觉。实际图片中错误码为619，描述中为619，无幻觉。但描述中错误地声称错误码为619，正文为619，故为幻觉。准确描述应为错误码619，与图中一致，无幻觉。描述中错误码619正确，协议PPTP正确，端口1723正确，客户端版本v2.8（低于建议v3.2）正确，因此无幻觉。最终评估：无幻觉，覆盖6个要素中的5个，缺少'协议'未被重点提及但存在于图中，故 coverage 为 0.83。"
+          },
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "caption",
+          "id": "cap-003",
+          "image": "nginx_502.png",
+          "key_points": [
+            "502",
+            "Nginx",
+            "上游服务",
+            "网关"
+          ],
+          "caption": "报错截图，主体为 Nginx 服务，关键文字包括“502 Bad Gateway”、“nginx/1.24.0”、“上游服务不可达”、“proxy_read_timeout”、“网关: Nginx”、“上游: app-server:8080”，表达上游服务（app-server:8080）不可达导致 Nginx 网关返回 502 错误，需检查后端状态和超时配置。",
+          "cosine": 0.7658,
+          "keypoint_hit": 1.0,
+          "judge": {
+            "available": true,
+            "hallucinated": [],
+            "coverage": 0.857,
+            "reason": "描述中未提及'proxy_read_timeout'和'nginx/1.24.0'，但其他关键要素均正确覆盖"
+          },
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "primary_metric": null,
+      "criteria": [
+        {
+          "metric": "diagnosis_field_accuracy",
+          "threshold": 0.67,
+          "lower_is_better": false
+        },
+        {
+          "metric": "caption_keypoint_hit",
+          "threshold": 0.6,
+          "lower_is_better": false
+        }
+      ],
+      "verdict": "PASS",
+      "notes": [
+        "配图描述为自由文本，主指标为关键词命中率；余弦为初筛，幻觉由 LLM-as-judge 判定。"
+      ]
+    }
+  },
+  "notes": [],
+  "error": ""
+}

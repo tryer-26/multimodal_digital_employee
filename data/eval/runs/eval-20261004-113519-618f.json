@@ -1,0 +1,822 @@
+{
+  "id": "eval-20261004-113519-618f",
+  "status": "done",
+  "suites": [
+    "asr",
+    "tts",
+    "vlm",
+    "retrieval"
+  ],
+  "started_at": "2026-10-04T11:35:19",
+  "finished_at": "2026-10-04T11:36:40",
+  "progress": {
+    "done": 4,
+    "total": 4,
+    "current": ""
+  },
+  "config": {
+    "asr_provider": "api",
+    "asr_model": "FunAudioLLM/SenseVoiceSmall",
+    "tts_provider": "edge",
+    "tts_voice": "zh-CN-XiaoxiaoNeural",
+    "vlm_model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+    "embedding_model": "Qwen/Qwen3-VL-Embedding-8B",
+    "reranker_model": "Qwen/Qwen3-VL-Reranker-8B",
+    "retrieval_top_k": 10,
+    "reranker_top_n": 3,
+    "max_cases": 20,
+    "concurrency": 2,
+    "thresholds": {
+      "asr_cer": 0.15,
+      "tts_cer": 0.15,
+      "vlm_field_acc": 0.67,
+      "caption_keypoint": 0.6,
+      "retrieval_recall": 0.7
+    }
+  },
+  "results": {
+    "asr": {
+      "suite": "asr",
+      "title": "语音识别（ASR）字错率",
+      "sample_count": 10,
+      "metrics": {
+        "cer": 0.0276,
+        "sentence_accuracy": 0.8,
+        "failure_rate": 0.0,
+        "synth_failed": 0,
+        "latency_p50_ms": 3257.2,
+        "latency_p95_ms": 8944.2,
+        "measured": 10
+      },
+      "items": [
+        {
+          "id": "sp-001",
+          "text": "我的 VPN 连接不上，提示错误 619。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "我的VPN连接不上，提示错误619。",
+          "cer": 0.0,
+          "latency_ms": 7611.3,
+          "error": ""
+        },
+        {
+          "id": "sp-002",
+          "text": "企业邮箱能收邮件但不能发邮件，应该怎么解决？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "企业邮箱能收邮件，但不能发邮件，应该怎么解决？",
+          "cer": 0.0,
+          "latency_ms": 7524.2,
+          "error": ""
+        },
+        {
+          "id": "sp-003",
+          "text": "我忘记密码了，怎么重置企业账号密码？",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "我忘记密码了，怎么重置企业账号密码？",
+          "cer": 0.0,
+          "latency_ms": 10034.8,
+          "error": ""
+        },
+        {
+          "id": "sp-004",
+          "text": "安装数据库客户端时提示没有管理员权限。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "安装数据库客户端时提示没有管理员权限。",
+          "cer": 0.0,
+          "latency_ms": 4156.4,
+          "error": ""
+        },
+        {
+          "id": "sp-005",
+          "text": "Nginx 返回 502 错误，上游服务不可达。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "mix返回502错误，上游服务不可达。",
+          "cer": 0.1579,
+          "latency_ms": 1862.2,
+          "error": ""
+        },
+        {
+          "id": "sp-006",
+          "text": "账号连续输错五次被锁定了，多久能解锁？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "账号连续输错5次被锁定了，多久能解锁？",
+          "cer": 0.0,
+          "latency_ms": 6023.1,
+          "error": ""
+        },
+        {
+          "id": "sp-007",
+          "text": "VPN 客户端需要升级到 3.2 以上版本。",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "VPN客户端需要升级到3.2以上版本。",
+          "cer": 0.0,
+          "latency_ms": 1906.3,
+          "error": ""
+        },
+        {
+          "id": "sp-008",
+          "text": "Outlook 配置企业邮箱的 IMAP 服务器端口是 993。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "outlook配置企业邮箱的imm服务器端口是993。",
+          "cer": 0.0741,
+          "latency_ms": 2358.1,
+          "error": ""
+        },
+        {
+          "id": "sp-009",
+          "text": "申请办公软件安装需要直属主管审批。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "申请办公软件安装需要直属主管审批。",
+          "cer": 0.0,
+          "latency_ms": 1992.2,
+          "error": ""
+        },
+        {
+          "id": "sp-010",
+          "text": "普通员工的密码有效期是一百八十天。",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "synth_failed": false,
+          "hypothesis": "普通员工的密码有效期是180天。",
+          "cer": 0.0,
+          "latency_ms": 1801.1,
+          "error": ""
+        }
+      ],
+      "primary_metric": "cer",
+      "criteria": [],
+      "verdict": "PASS",
+      "notes": []
+    },
+    "tts": {
+      "suite": "tts",
+      "title": "语音合成（TTS）可懂度与副语言",
+      "sample_count": 10,
+      "metrics": {
+        "success_rate": 1.0,
+        "round_trip_cer": 0.0387,
+        "latency_p50_ms": 1422.7,
+        "latency_p95_ms": 1684.9,
+        "mean_chars_per_sec": 4.15,
+        "duration_len_corr": 0.6841,
+        "truncation_rate": 0.0,
+        "measured": 10
+      },
+      "items": [
+        {
+          "id": "sp-001",
+          "text": "我的 VPN 连接不上，提示错误 619。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "duration_sec": 4.608,
+          "chars_per_sec": 3.47,
+          "hypothesis": "我的VPN连接不上，提示错误619。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1419.4,
+          "error": ""
+        },
+        {
+          "id": "sp-002",
+          "text": "企业邮箱能收邮件但不能发邮件，应该怎么解决？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "duration_sec": 4.896,
+          "chars_per_sec": 4.08,
+          "hypothesis": "企业邮箱能收邮件，但不能发邮件，应该怎么解决？",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1622.4,
+          "error": ""
+        },
+        {
+          "id": "sp-003",
+          "text": "我忘记密码了，怎么重置企业账号密码？",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "duration_sec": 4.104,
+          "chars_per_sec": 3.9,
+          "hypothesis": "我忘记密码了，怎么重置企业账号密码？",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1444.4,
+          "error": ""
+        },
+        {
+          "id": "sp-004",
+          "text": "安装数据库客户端时提示没有管理员权限。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "duration_sec": 3.936,
+          "chars_per_sec": 4.57,
+          "hypothesis": "安装数据库客户端时提示没有管理员权限。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1736.1,
+          "error": ""
+        },
+        {
+          "id": "sp-005",
+          "text": "Nginx 返回 502 错误，上游服务不可达。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "duration_sec": 4.2,
+          "chars_per_sec": 4.52,
+          "hypothesis": "mix返回502错误，上游服务不可达。",
+          "round_trip_cer": 0.1579,
+          "latency_ms": 1273.4,
+          "error": ""
+        },
+        {
+          "id": "sp-006",
+          "text": "账号连续输错五次被锁定了，多久能解锁？",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "duration_sec": 4.296,
+          "chars_per_sec": 3.96,
+          "hypothesis": "账号连续输错5次被锁定了，多久能解锁？",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1170.0,
+          "error": ""
+        },
+        {
+          "id": "sp-007",
+          "text": "VPN 客户端需要升级到 3.2 以上版本。",
+          "voice": "zh-CN-XiaoyiNeural",
+          "ok": true,
+          "duration_sec": 4.512,
+          "chars_per_sec": 3.77,
+          "hypothesis": "VPN客户端需要升级到3.2以上版本。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1480.0,
+          "error": ""
+        },
+        {
+          "id": "sp-008",
+          "text": "Outlook 配置企业邮箱的 IMAP 服务器端口是 993。",
+          "voice": "zh-CN-YunyangNeural",
+          "ok": true,
+          "duration_sec": 5.016,
+          "chars_per_sec": 5.38,
+          "hypothesis": "outload配置企业邮箱的imm服务器端口是993。",
+          "round_trip_cer": 0.1481,
+          "latency_ms": 1426.0,
+          "error": ""
+        },
+        {
+          "id": "sp-009",
+          "text": "申请办公软件安装需要直属主管审批。",
+          "voice": "zh-CN-XiaoxiaoNeural",
+          "ok": true,
+          "duration_sec": 4.296,
+          "chars_per_sec": 3.72,
+          "hypothesis": "申请办公软件安装需要直属主管审批。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1336.2,
+          "error": ""
+        },
+        {
+          "id": "sp-010",
+          "text": "普通员工的密码有效期是一百八十天。",
+          "voice": "zh-CN-YunxiNeural",
+          "ok": true,
+          "duration_sec": 3.624,
+          "chars_per_sec": 4.14,
+          "hypothesis": "普通员工的密码有效期是180天。",
+          "round_trip_cer": 0.0,
+          "latency_ms": 1247.8,
+          "error": ""
+        }
+      ],
+      "primary_metric": "round_trip_cer",
+      "criteria": [],
+      "verdict": "PASS",
+      "notes": []
+    },
+    "vlm": {
+      "suite": "vlm",
+      "title": "图文理解（截图诊断 + 配图描述）",
+      "sample_count": 6,
+      "metrics": {
+        "error_code_accuracy": 1.0,
+        "service_hit_rate": 1.0,
+        "error_type_accuracy": 1.0,
+        "diagnosis_field_accuracy": 1.0,
+        "caption_cosine": 0.5834,
+        "caption_keypoint_hit": 1.0,
+        "hallucination_free_rate": 0.6667,
+        "judge_available": 3
+      },
+      "items": [
+        {
+          "kind": "diagnosis",
+          "id": "vlm-001",
+          "image": "vpn_619.png",
+          "gold": {
+            "error_code": "619",
+            "service": "VPN",
+            "error_type": "网络"
+          },
+          "pred": {
+            "error_code": "619",
+            "service": "VPN",
+            "error_type": "网络"
+          },
+          "matches": {
+            "error_code": true,
+            "service": true,
+            "error_type": true
+          },
+          "field_hit": 1.0,
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "diagnosis",
+          "id": "vlm-002",
+          "image": "nginx_502.png",
+          "gold": {
+            "error_code": "502",
+            "service": "Nginx",
+            "error_type": "网络"
+          },
+          "pred": {
+            "error_code": "502",
+            "service": "Nginx",
+            "error_type": "网络"
+          },
+          "matches": {
+            "error_code": true,
+            "service": true,
+            "error_type": true
+          },
+          "field_hit": 1.0,
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "diagnosis",
+          "id": "vlm-003",
+          "image": "vpn_691.png",
+          "gold": {
+            "error_code": "691",
+            "service": "VPN",
+            "error_type": "权限"
+          },
+          "pred": {
+            "error_code": "691",
+            "service": "VPN",
+            "error_type": "权限"
+          },
+          "matches": {
+            "error_code": true,
+            "service": true,
+            "error_type": true
+          },
+          "field_hit": 1.0,
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "caption",
+          "id": "cap-001",
+          "image": "network_topology.png",
+          "key_points": [
+            "员工终端",
+            "VPN网关",
+            "内网应用服务器",
+            "1723",
+            "IKEv2"
+          ],
+          "caption": "网络拓扑图，主体为员工终端、公网/运营商、VPN网关和内网应用服务器，关键文字包括“1723/443”、“IKEv2 / SSTP”、“网关策略与 NAT 影响连接成功率”，表达员工终端通过公网连接至VPN网关并访问内网服务器的路径及影响因素。",
+          "cosine": 0.4877,
+          "keypoint_hit": 1.0,
+          "judge": {
+            "available": true,
+            "hallucinated": [],
+            "coverage": 0.8,
+            "reason": "描述中提及的1723、IKEv2、员工终端、VPN网关、内网应用服务器均在图中有所体现，但1723/443中的443未在图中明确标注，仅1723可见，因此 coverage 为0.8。"
+          },
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "caption",
+          "id": "cap-002",
+          "image": "vpn_619.png",
+          "key_points": [
+            "619",
+            "VPN",
+            "1723",
+            "端口",
+            "版本"
+          ],
+          "caption": "报错截图，主体为VPN客户端连接失败提示，关键文字包括“连接失败 - VPN 客户端”、“错误 619”、协议“PPTP”、端口“1723”、客户端版本“v2.8（低于建议的 v3.2）”；该图表达的关键关系是：因网络端口关闭导致无法建立远程连接，且客户端版本过低。",
+          "cosine": 0.4817,
+          "keypoint_hit": 1.0,
+          "judge": {
+            "available": true,
+            "hallucinated": [
+              "错误 619",
+              "版本 v2.8（低于建议的 v3.2）",
+              "端口 1723"
+            ],
+            "coverage": 0.6,
+            "reason": "描述中错误地将错误号写为619，实际图中为619，因此出现幻觉；图中显示端口为1723，但描述错误地写成1723，属于幻觉；版本信息与图中一致，但描述中额外添加了'低于建议的v3.2'，该信息无图中依据；关键要素中，VPN、端口、版本被覆盖，但619和1723错误，因此覆盖率为0.6"
+          },
+          "ok": true,
+          "error": ""
+        },
+        {
+          "kind": "caption",
+          "id": "cap-003",
+          "image": "nginx_502.png",
+          "key_points": [
+            "502",
+            "Nginx",
+            "上游服务",
+            "网关"
+          ],
+          "caption": "报错截图，主体为Nginx反向代理，显示502 Bad Gateway错误，关键文字包括“502 Bad Gateway”、“nginx/1.24.0”、“上游服务不可达”、“proxy_read_timeout”、“网关: Nginx”、“上游: app-server:8080”，表达后端服务（app-server:8080）不可达导致Nginx代理失败的故障关系。",
+          "cosine": 0.7808,
+          "keypoint_hit": 1.0,
+          "judge": {
+            "available": true,
+            "hallucinated": [],
+            "coverage": 0.8,
+            "reason": "描述中提到的502、Nginx、上游服务、网关均在图中出现，但未描述'proxy_read_timeout'这一关键词，且'nginx/1.24.0'是准确的，其他信息如'网关: Nginx'和'上游: app-server:8080'与图基本一致，但'proxy_read_timeout'虽文字部分存在，但未被准确识别为图中内容，因此覆盖度为0.8"
+          },
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "primary_metric": null,
+      "criteria": [
+        {
+          "metric": "diagnosis_field_accuracy",
+          "threshold": 0.67,
+          "lower_is_better": false
+        },
+        {
+          "metric": "caption_keypoint_hit",
+          "threshold": 0.6,
+          "lower_is_better": false
+        }
+      ],
+      "verdict": "PASS",
+      "notes": [
+        "配图描述为自由文本，主指标为关键词命中率；余弦为初筛，幻觉由 LLM-as-judge 判定。"
+      ]
+    },
+    "retrieval": {
+      "suite": "retrieval",
+      "title": "检索（多模态 vs 纯文本）",
+      "sample_count": 10,
+      "metrics": {
+        "mm.hit@1": 0.9,
+        "mm.mrr": 0.95,
+        "mm.ndcg@3": 0.9164,
+        "mm.recall@1": 0.8,
+        "mm.recall@3": 0.95,
+        "text_only.hit@1": 0.8,
+        "text_only.mrr": 0.8833,
+        "text_only.ndcg@3": 0.8551,
+        "text_only.recall@1": 0.75,
+        "text_only.recall@3": 0.9,
+        "multimodal_gain@3": 0.05
+      },
+      "items": [
+        {
+          "id": "ret-001",
+          "query": "VPN 连接失败提示错误 619 怎么解决",
+          "gold": [
+            "vpn.md"
+          ],
+          "multimodal_ranked": [
+            "vpn.md",
+            "vpn_error_619.png",
+            "error_code_table.md"
+          ],
+          "text_only_ranked": [
+            "vpn.md",
+            "error_code_table.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-002",
+          "query": "忘记密码了如何重置企业账号密码",
+          "gold": [
+            "password.md"
+          ],
+          "multimodal_ranked": [
+            "password.md"
+          ],
+          "text_only_ranked": [
+            "password.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-003",
+          "query": "企业邮箱 IMAP 和 SMTP 服务器端口怎么配置",
+          "gold": [
+            "email.md"
+          ],
+          "multimodal_ranked": [
+            "email.md"
+          ],
+          "text_only_ranked": [
+            "email.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-004",
+          "query": "安装软件时提示没有管理员权限怎么办",
+          "gold": [
+            "software.md"
+          ],
+          "multimodal_ranked": [
+            "图文混合_软件安装与权限申请指南.pdf",
+            "software.md"
+          ],
+          "text_only_ranked": [
+            "图文混合_软件安装与权限申请指南.pdf",
+            "software.md"
+          ],
+          "multimodal": {
+            "hit@1": 0.0,
+            "mrr": 0.5,
+            "ndcg@3": 0.6309,
+            "recall@1": 0.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 0.0,
+            "mrr": 0.5,
+            "ndcg@3": 0.6309,
+            "recall@1": 0.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-005",
+          "query": "Nginx 502 Bad Gateway 是什么原因导致的",
+          "gold": [
+            "error_code_table.md"
+          ],
+          "multimodal_ranked": [
+            "error_code_table.md",
+            "表格_IT常见错误码对照表.pdf"
+          ],
+          "text_only_ranked": [
+            "error_code_table.md",
+            "表格_IT常见错误码对照表.pdf",
+            "vpn.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-006",
+          "query": "账号连续输错密码被锁定多久能自动解锁",
+          "gold": [
+            "password.md"
+          ],
+          "multimodal_ranked": [
+            "password.md",
+            "error_code_table.md"
+          ],
+          "text_only_ranked": [
+            "password.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-007",
+          "query": "VPN 报错截图上显示了什么错误码",
+          "gold": [
+            "vpn_error_619.png",
+            "vpn.md"
+          ],
+          "multimodal_ranked": [
+            "vpn_error_619.png",
+            "error_code_table.md",
+            "表格_IT常见错误码对照表.pdf"
+          ],
+          "text_only_ranked": [
+            "error_code_table.md",
+            "表格_IT常见错误码对照表.pdf",
+            "vpn.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 0.6131,
+            "recall@1": 0.5,
+            "recall@3": 0.5
+          },
+          "text_only": {
+            "hit@1": 0.0,
+            "mrr": 0.3333,
+            "ndcg@3": 0.3066,
+            "recall@1": 0.0,
+            "recall@3": 0.5
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-008",
+          "query": "管理员和普通员工的密码有效期分别是多久",
+          "gold": [
+            "password.md"
+          ],
+          "multimodal_ranked": [
+            "password.md",
+            "密码重置与账号解锁SOP.docx",
+            "图文混合_软件安装与权限申请指南.pdf"
+          ],
+          "text_only_ranked": [
+            "password.md",
+            "email.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-009",
+          "query": "Windows 访问被拒绝错误码 0x80070005 是什么意思",
+          "gold": [
+            "error_code_table.md"
+          ],
+          "multimodal_ranked": [
+            "error_code_table.md",
+            "表格_IT常见错误码对照表.pdf"
+          ],
+          "text_only_ranked": [
+            "error_code_table.md",
+            "表格_IT常见错误码对照表.pdf",
+            "vpn.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 1.0,
+            "recall@1": 1.0,
+            "recall@3": 1.0
+          },
+          "error": ""
+        },
+        {
+          "id": "ret-010",
+          "query": "企业内网通过什么路径和协议接入 VPN",
+          "gold": [
+            "network_diagram.png",
+            "vpn.md"
+          ],
+          "multimodal_ranked": [
+            "network_diagram.png",
+            "图文混合_软件安装与权限申请指南.pdf",
+            "vpn.md"
+          ],
+          "text_only_ranked": [
+            "vpn.md"
+          ],
+          "multimodal": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 0.9197,
+            "recall@1": 0.5,
+            "recall@3": 1.0
+          },
+          "text_only": {
+            "hit@1": 1.0,
+            "mrr": 1.0,
+            "ndcg@3": 0.6131,
+            "recall@1": 0.5,
+            "recall@3": 0.5
+          },
+          "error": ""
+        }
+      ],
+      "primary_metric": null,
+      "criteria": [
+        {
+          "metric": "mm.recall@3",
+          "threshold": 0.7,
+          "lower_is_better": false
+        }
+      ],
+      "verdict": "PASS",
+      "notes": [
+        "主指标为多模态模式的 Recall@3；text_only 为同题对照，用于体现「文查图」增益。"
+      ]
+    }
+  },
+  "notes": [],
+  "error": ""
+}

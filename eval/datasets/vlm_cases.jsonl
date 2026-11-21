@@ -1,0 +1,3 @@
+{"id": "vlm-001", "image": "vpn_619.png", "gold": {"error_code": "619", "service": "VPN", "error_type": "网络"}}
+{"id": "vlm-002", "image": "nginx_502.png", "gold": {"error_code": "502", "service": "Nginx", "error_type": "网络"}}
+{"id": "vlm-003", "image": "vpn_691.png", "gold": {"error_code": "691", "service": "VPN", "error_type": "权限"}}
